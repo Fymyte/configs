@@ -3,7 +3,7 @@
 	url = https://github.com/Fymyte/nvim-config.git
 [submodule "polybar"]
 	path = polybar
-	url = https://github.com/Fymyte/polybar.git 
+	url = https://github.com/Fymyte/polybar-config.git
 [submodule "zsh"]
 	path = zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
