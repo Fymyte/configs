@@ -1,0 +1,79 @@
+# alacritty
+# appimagelauncher.cfg
+# Atom
+# autostart
+# bashtop
+# bauh
+# cef_user_data
+# chromium
+# clipit
+# cmus
+# Code
+# configstore
+# dconf
+# discord
+# dmenu-recent
+# dunst
+# epdfview
+# falkon
+# flameshot
+# gconf
+# gh
+# GIMP
+# gtk-2.0
+# gtk-3.0
+# hexchat
+# hiri.com
+# htop
+# i3-scrot.conf
+# i3status
+# ibus
+# JetBrains
+# Kite
+# Kvantum
+# libfm
+# Mailspring
+# manjaro
+# manjaro-hello.json
+# menus
+# Microsoft
+# Microsoft Teams - Insiders
+# Microsoft Teams - Preview
+# mimeapps.list
+# morc_menu
+# Mousepad
+# nautilus
+# neofetch
+# nitrogen
+# octopi
+# oomox
+# pamac
+# pavucontrol.ini
+# pcmanfm
+# picom
+# polybar.old
+# pulse
+# qt5ct
+# QtProject.conf
+# ranger
+# ryzen-stabilizator
+# s-tui
+# systemd
+# teams-for-linux
+# teams-insiders
+# user-dirs.dirs
+# user-dirs.locale
+# viewnior
+# vlc
+# vim
+# volumeicon
+# xfce4
+*
+!.gitignore
+!.gitmodules
+!qtile/
+!nvim/
+!zsh/
+!rofi/
+!i3/
+!polybar/

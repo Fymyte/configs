@@ -1,0 +1,12 @@
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/Fymyte/nvim-config.git
+[submodule "polybar"]
+	path = polybar
+	url = https://github.com/Fymyte/polybar.git 
+[submodule "zsh"]
+	path = zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "i3"]
+	path = i3
+	url = https://github.com/Fymyte/i3-config.git
