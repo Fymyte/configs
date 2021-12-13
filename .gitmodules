@@ -8,7 +8,7 @@
 	branch = main
 [submodule "zsh"]
 	path = zsh
-	url = https://github.com/ohmyzsh/ohmyzsh.git
+	url = https://github.com/Fymyte/zsh-config.git
 [submodule "i3"]
 	path = i3
 	url = https://github.com/Fymyte/i3-config.git
