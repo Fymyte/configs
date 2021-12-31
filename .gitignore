@@ -1,4 +1,5 @@
 *
+!*/
 !.gitignore
 !.gitmodules
 !qtile/
@@ -10,3 +11,4 @@
 !neofetch
 !alacritty/
 !kitty/
+!diricons/*
