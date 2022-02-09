@@ -112,8 +112,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: iosevka extended
-    style: Regular
+    family: Iosevka Extended
+    # style: Regular
 
   # Bold font face
   bold:
@@ -121,8 +121,8 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: mononoki Nerd Font
-    style: Bold
+    family: Iosevka Extrabold Extended
+    # style: Bold
 
   # Italic font face
   italic:
@@ -140,7 +140,8 @@ font:
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: mononoki Nerd Font
-    style: Bold Italic
+    family: Iosevka Extrabold Extended
+    style: Italic
 
   # Point size
   size: 13.0
