@@ -3,6 +3,7 @@
 CUSTOM_PLUGINS="\
   https://github.com/zsh-users/zsh-autosuggestions \
   https://github.com/zsh-users/zsh-syntax-highlighting.git \
+  https://github.com/jeffreytse/zsh-vi-mode \
   "
 
 SCRIPT_DIR=$(pwd)
@@ -18,12 +19,6 @@ echo_info() {
 
 create_custom_dir() {
   mkdir "$CUSTOM_DIR"
-}
-
-install_themes() {
-  cd $SCRIPT_DIR
-  mkdir "$CUSTOM_DIR/themes/"
-  cp themes/*.zsh-theme "$CUSTOM_DIR/themes/"
 }
 
 install_plugins() {
@@ -42,9 +37,6 @@ install_zshrc() {
 main() {
   echo_info "Creating custom directory"
   create_custom_dir
-
-  echo_info "Installing themes ..."
-  install_themes
 
   echo_info "Installing plugins ..."
   install_plugins
