@@ -1,0 +1,55 @@
+# vim:ft=sh
+local BASE_PATH="$HOME/.config/zsh"
+export ZSH="$BASE_PATH/ohmyzsh"
+ZSH_CUSTOM="$BASE_PATH/custom"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="af-magic-custom"
+# Uncomment the following line to automatically update without prompting.
+DISABLE_UPDATE_PROMPT="true"
+# Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+plugins=(
+  git
+  docker
+  docker-compose
+  lf
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-vi-mode
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+alias vim="nvim"
+alias ls="exa -lah"
+if [ "$TERM" = "xterm-kitty" ]; then
+  alias ssh='kitty +kitten ssh'
+fi
+
+PATH="$PATH:/home/pierrick/opt/GNAT/2021-arm-elf/bin/:/home/pierrick/opt/GNAT/2021/bin/"
+export MINICOM='-b 115200 -o -c on'
+export CARGO_HOME="$HOME/.config/cargo"
+
+
+# Dir icons
+LF_ICONS=$(sed ~/.config/diricons/icons.conf \
+            -e '/^[ \t]*#/d'       \
+            -e '/^[ \t]*$/d'       \
+            -e 's/[ \t]\+/=/g'     \
+            -e 's/$/ /')
+LF_ICONS=${LF_ICONS//$'\n'/:}
+export LF_ICONS
+
