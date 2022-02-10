@@ -4,7 +4,7 @@
 !.gitmodules
 !qtile/
 !nvim/
-!zsh/*
+!zsh/**/*
 !rofi/
 !i3/
 !polybar/
