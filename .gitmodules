@@ -6,7 +6,3 @@
 	path = polybar
 	url = https://github.com/Fymyte/polybar-config.git
 	branch = main
-[submodule "i3"]
-	path = i3
-	url = https://github.com/Fymyte/i3-config.git
-	branch = main
