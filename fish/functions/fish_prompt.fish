@@ -1,18 +1,25 @@
 function fish_prompt
-  set -l last_command_status $status
   set -l cwd (prompt_pwd)
 
   set -l normal_color     (set_color normal)
-  set -l success_color    (set_color 8787FF)
-  set -l error_color      (set_color red --bold)
+  set -l arrows_color     (set_color 8787FF)
   set -l directory_color  (set_color 0087D7)
   set -l last_color
 
   echo -n -s $directory_color $cwd $normal_color
-  if test $last_command_status -eq 0
-    set last_color $success_color
-  else
-    set last_color $error_color
+
+  switch $fish_bind_mode
+    case default
+      echo -n -s (set_color --bold red) " » " $normal_color
+    case insert
+      echo -n -s $arrows_color " » " $normal_color
+    case replace_one
+      echo -n -s (set_color --bold green) " » " $normal_color
+    case visual
+      set_color --bold brmagenta
+      echo -n -s (set_color --bold brmagenta) " » " $normal_color
+    case '*'
+      echo -n -s (set_color --bold red) " » " $normal_color
   end
-  echo -n -s $last_color " » " $normal_color
+  set_color normal
 end

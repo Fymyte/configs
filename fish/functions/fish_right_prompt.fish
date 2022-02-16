@@ -1,4 +1,5 @@
 function fish_right_prompt
+  set -l last_status $status
 
   set -l ahead    "↑"
   set -l behind   "↓"
@@ -7,11 +8,16 @@ function fish_right_prompt
   set -l clean     "✓"
 
   set -l normal_color (set_color normal)
+  set -l error_color (set_color red)
   set -l repository_color (set_color $fish_color_cwd 2> /dev/null; or set_color green)
   set -l repo_ditry_color (set_color brRed)
   set -l repo_clean_color (set_color green)
   set -l paren_color  (set_color blue)
-  set_color $fish_color_autosuggestion 2> /dev/null; or set_color 555
+
+  if [ $last_status -ne 0 ]
+    echo -n -s $error_color $last_status " ↵ " $normal_color
+  end
+
   if git_is_repo
 
     echo -n -s $paren_color "("
