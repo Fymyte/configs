@@ -107,8 +107,8 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 bindsym $mod+h focus left
-bindsym $mod+j focus up
-bindsym $mod+k focus down
+bindsym $mod+j focus down
+bindsym $mod+k focus up
 bindsym $mod+l focus right
 # Should window under cursor take the focus
 focus_follows_mouse no
@@ -119,8 +119,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 bindsym $mod+Shift+h move right
-bindsym $mod+Shift+j move up
-bindsym $mod+Shift+k move down
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move left
 
 # workspace back and forth (with/without active container)
@@ -369,11 +369,6 @@ exec_always --no-startup-id picom
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id pamac-tray
-
-# "exec --no-startup-id i3-msg workspace $ws2"
-# "exec --no-startup-id i3-msg workspace $ws8"
-# "exec --no-startup-id i3-msg workspace $ws1"
-
 
 ############################
 ### i3 related settings: ###
