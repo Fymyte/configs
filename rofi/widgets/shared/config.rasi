@@ -1,0 +1,171 @@
+/*
+ * Author: Pierrick Guillaume
+ * Github: @Fymyte
+ */
+
+configuration {
+  icon-theme:          "Oranchelo";
+  fixed-num-lines:     true;
+  show-icons:          true;
+  click-to-exit:       true;
+  sidebar-mode:        false;
+  scroll-method:       0;
+  drun-display-format: "{icon}  {name}";
+  run-display-format:  "{icon}  {name}";
+  drun-url-launcher:   "xdg-open {cmd}";
+
+  // Select entry with a single mouse click
+  hover-select:        true;
+  me-select-entry:     "";
+  me-accept-entry:     "MousePrimary";
+
+  // Display options
+  display-drun:        "  Apps ";
+  display-run:         "  Run ";
+  display-window:      " 﩯 Window ";
+  display-network:     "  Network ";
+  modi:                [run,drun];
+}
+
+* {
+  font:                "JetBrains Mono Bold 12";
+  font-emphasis:       "JetBrains Mono ExtraBold Italic 14";
+  background-color:    @background;
+  text-color:          @foreground;
+  border-radius:       10px;
+  border-width:        4px;
+}
+
+window {
+  border:              0px;
+  border-color:        @accent;
+  border-radius:       @border-radius;
+  padding:             20px;
+}
+
+mainbox {
+  border:              0px;
+  border-color:        @accent;
+  padding:             0px;
+}
+
+inputbar {
+  spacing:             0;
+  scrollbar:           true;
+}
+
+prompt {
+  text-color:          @background;
+  background-color:    @accent;
+  horizontal-align:    0.5;
+  vertical-align:      0.5;
+}
+
+entry {
+  spacing:             0;
+  text-color:          @accent;
+  padding:             15px 20px;
+  border-radius:       @border-radius;
+  font:                @font-emphasis;
+  background-color:    @overlay;
+  vertical-align:      0.5;
+}
+
+case-indicator {
+  spacing:             0;
+  horizontal-align:    0.5;
+  vertical-align:      0.5;
+}
+
+listview {
+  fixed-height:        0;
+  border:              0px;
+  border-color:        @accent;
+  spacing:             5px;
+  scrollbar:           false;
+  padding:             25px 5px 0px 5px;
+}
+
+sidebar {
+  border:              0;
+  border-color:        @accent;
+  border-radius:       @border-radius;
+}
+
+element-text, element-icon {
+  background-color:    transparent;
+  text-color:          inherit;
+}
+
+element {
+  border:              @border-width;
+  border-radius:       @border-radius;
+  padding:             15px;
+}
+element normal.normal {
+  background-color:    @background;
+}
+element normal.urgent {
+  background-color:    @background;
+  text-color:          @red;
+}
+element normal.active {
+  background-color:    @background;
+  border-color:        @green;
+}
+element selected {
+  border-color:        @accent;
+}
+element selected.normal {
+  background-color:    @background;
+}
+element selected.urgent {
+  background-color:    @background;
+  text-color:          @red;
+}
+element selected.active {
+  background-color:    @background;
+}
+element alternate {
+  background-color:    @background;
+}
+element alternate.normal {
+}
+element alternate.urgent {
+}
+element alternate.active {
+}
+
+button {
+  horizontal-align:    0.5;
+  vertical-align:      0.5;
+  background-color:    @accent;
+  margin:              5px;
+  padding:             15px;
+  text-color:          @background;
+  border:              0px;
+  border-radius:       @border-radius;
+  border-color:        @accent;
+}
+
+button selected {
+  background-color:    @background;
+  text-color:          @accent;
+  border:              @border-width;
+  border-color:        @accent;
+}
+
+scrollbar {
+  width:               4px;
+  border:              0px;
+  handle-color:        @foreground;
+  handle-width:        8px;
+  padding:             0;
+}
+
+message {
+  border:              @border;
+  border-color:        @accent;
+  padding:             1px;
+}
+
