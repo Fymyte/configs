@@ -10,7 +10,12 @@ configuration {
 @import "widgets/shared/colors.rasi"
 @import "widgets/shared/config.rasi"
 
+window {
+  width:    500px;
+}
+
 inputbar {
   padding:  0px 10px;
-  children: [ prompt,textbox-prompt-colon,entry, textbox-prompt-colon,num-filtered-rows,textbox-num-sep,num-rows ];
+  children: [ prompt,textbox-prompt-colon,entry ];
 }
+

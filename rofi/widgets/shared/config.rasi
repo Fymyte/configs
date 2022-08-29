@@ -24,6 +24,7 @@ configuration {
   display-run:         "  Run ";
   display-window:      " 﩯 Window ";
   display-network:     "  Network ";
+  display-emoji:       " 😀 Emoji ";
   modi:                [run,drun];
 }
 
@@ -39,8 +40,9 @@ configuration {
 window {
   border:              0px;
   border-color:        @accent;
-  border-radius:       @border-radius;
   padding:             20px;
+  width:               60%;
+  height:              60%;
 }
 
 mainbox {
@@ -51,24 +53,55 @@ mainbox {
 
 inputbar {
   spacing:             0;
-  scrollbar:           true;
 }
 
 prompt {
   text-color:          @background;
   background-color:    @accent;
+  padding:             0px 20px;
   horizontal-align:    0.5;
   vertical-align:      0.5;
+}
+
+textbox-prompt-colon {
+  expand:           false;
+  vertical-align:   0.5;
+  horizontal-align: 0.5;
+  str:              "   ";
+  text-color:       inherit;
+}
+
+num-filtered-rows {
+  expand:     false;
+  text-color: inherit;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+}
+
+num-rows {
+  expand:     false;
+  text-color: inherit;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+}
+
+textbox-num-sep {
+  expand:     false;
+  str:        "/";
+  text-color: inherit;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
 }
 
 entry {
   spacing:             0;
   text-color:          @accent;
   padding:             15px 20px;
-  border-radius:       @border-radius;
   font:                @font-emphasis;
   background-color:    @overlay;
   vertical-align:      0.5;
+  cursor:              text;
+  placeholder:         "";
 }
 
 case-indicator {
@@ -89,20 +122,23 @@ listview {
 sidebar {
   border:              0;
   border-color:        @accent;
-  border-radius:       @border-radius;
 }
 
 element-text, element-icon {
   background-color:    transparent;
   text-color:          inherit;
+  cursor:              inherit;
+  highlight:           inherit;
 }
 
 element {
+  background-color:    @background;
   border:              @border-width;
-  border-radius:       @border-radius;
+  border-color:        transparent;
   padding:             15px;
 }
-element normal.normal {
+
+element normal {
   background-color:    @background;
 }
 element normal.urgent {
@@ -113,27 +149,31 @@ element normal.active {
   background-color:    @background;
   border-color:        @green;
 }
-element selected {
-  border-color:        @accent;
-}
 element selected.normal {
   background-color:    @background;
+  border-color:        @accent;
+  text-color:          @accent;
 }
 element selected.urgent {
   background-color:    @background;
+  border-color:        @red;
   text-color:          @red;
 }
 element selected.active {
   background-color:    @background;
+  text-color:          @accent;
 }
 element alternate {
   background-color:    @background;
 }
 element alternate.normal {
+  background-color:    @background;
 }
 element alternate.urgent {
+  background-color:    @background;
 }
 element alternate.active {
+  background-color:    @background;
 }
 
 button {

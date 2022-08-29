@@ -16,18 +16,6 @@ window {
   height:           60%;
 }
 
-prompt {
-  padding:          0px 20px;
-}
-
-textbox-prompt-colon {
-  expand:           false;
-  vertical-align:   0.5;
-  horizontal-align: 0.5;
-  str:              "   ";
-  text-color:       inherit;
-}
-
 inputbar {
   children:         [ prompt,textbox-prompt-colon,entry ];
 }
