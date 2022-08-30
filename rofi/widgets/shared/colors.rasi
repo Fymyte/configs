@@ -6,6 +6,7 @@
   border:      @Rosewater;
   separator:   @Crust;
   overlay:     @Overlay0;
+  surface:     @Surface1;
   foreground:  @Text;
   red:         @Red;
   green:       @Green;

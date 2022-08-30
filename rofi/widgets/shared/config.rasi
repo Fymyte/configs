@@ -10,8 +10,8 @@ configuration {
   click-to-exit:       true;
   sidebar-mode:        false;
   scroll-method:       0;
-  drun-display-format: "{icon}  {name}";
-  run-display-format:  "{icon}  {name}";
+  drun-display-format: "{name}";
+  run-display-format:  "{name}";
   drun-url-launcher:   "xdg-open {cmd}";
 
   // Select entry with a single mouse click
@@ -25,11 +25,12 @@ configuration {
   display-window:      " 﩯 Window ";
   display-network:     "  Network ";
   display-emoji:       " 😀 Emoji ";
+  display-keys:        "  Keys ";
   modi:                [run,drun];
 }
 
 * {
-  font:                "JetBrains Mono Bold 12";
+  font:                "JetBrains Mono Bold 10";
   font-emphasis:       "JetBrains Mono ExtraBold Italic 14";
   background-color:    @background;
   text-color:          @foreground;
@@ -41,8 +42,11 @@ window {
   border:              0px;
   border-color:        @accent;
   padding:             20px;
-  width:               60%;
-  height:              60%;
+  location:            center;
+  anchor:              center;
+  width:               50%;
+  // height:              50%;
+  max-height:          60%;
 }
 
 mainbox {
@@ -117,6 +121,8 @@ listview {
   spacing:             5px;
   scrollbar:           false;
   padding:             25px 5px 0px 5px;
+  dynamic:             true;
+  lines:               10;
 }
 
 sidebar {
@@ -138,43 +144,48 @@ element {
   padding:             15px;
 }
 
-element normal {
-  background-color:    @background;
-}
+// element normal {
+//   background-color:    @background;
+// }
 element normal.urgent {
-  background-color:    @background;
+  // background-color:    @background;
   text-color:          @red;
 }
 element normal.active {
-  background-color:    @background;
+  // background-color:    @background;
   border-color:        @green;
 }
-element selected.normal {
-  background-color:    @background;
-  border-color:        @accent;
-  text-color:          @accent;
+element selected {
+  background-color:    @surface;
+  // border-color:        @accent;
+  // text-color:          @accent;
 }
-element selected.urgent {
-  background-color:    @background;
-  border-color:        @red;
-  text-color:          @red;
-}
-element selected.active {
-  background-color:    @background;
-  text-color:          @accent;
-}
-element alternate {
-  background-color:    @background;
-}
-element alternate.normal {
-  background-color:    @background;
-}
-element alternate.urgent {
-  background-color:    @background;
-}
-element alternate.active {
-  background-color:    @background;
-}
+// element selected.normal {
+//   background-color:    @surface;
+//   // border-color:        @accent;
+//   // text-color:          @accent;
+// }
+// element selected.urgent {
+//   background-color:    @background;
+//   border-color:        @red;
+//   text-color:          @red;
+// }
+// element selected.active {
+//   background-color:    @background;
+//   text-color:          @accent;
+// }
+// element alternate.normal {
+//   background-color:    @background;
+// }
+// element alternate.normal {
+//   background-color:    @background;
+// }
+// element alternate.urgent {
+//   background-color:    @background;
+// }
+// element alternate.active {
+//   background-color:    @background;
+// }
 
 button {
   horizontal-align:    0.5;
@@ -203,9 +214,13 @@ scrollbar {
   padding:             0;
 }
 
-message {
-  border:              @border;
-  border-color:        @accent;
-  padding:             1px;
+error-message {
+
+  text-color:          @red;
+}
+textbox {
+  // border:              @border-width;
+  // border-color:        @accent;
+  // padding:             1px;
 }
 

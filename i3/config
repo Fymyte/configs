@@ -18,8 +18,8 @@ set $alt Mod1
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 0
-default_floating_border normal
+default_border none
+default_floating_border pixel 2
 
 
 # Hide borders
@@ -62,7 +62,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-exec volumeicon
+exec --no-startup-id volumeicon
 bindsym $alt+Ctrl+t exec kitty -- btop
 bindsym $mod+Shift+p move scratchpad
 bindsym $mod+p scratchpad show
@@ -74,8 +74,8 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Screen capture
 bindsym Print exec flameshot gui
@@ -85,13 +85,14 @@ bindsym $mod+Shift+Print exec flameshot full -c
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'pango:monospace'"
 # bindsym $mod+d exec ~/.config/rofi/bin/launcher_text
 bindsym $mod+d exec ~/.config/rofi/bin/launcher.sh
-bindsym $mod+b exec rofi -theme ~/.config/rofi/widgets/launcher.rasi -modi emoji -show emoji -emoji-format '{emoji}'
+bindsym $mod+b exec rofi -modi emoji -show emoji -theme ~/.config/rofi/widgets/emoji.rasi
+bindsym $mod+Ctrl+b exec bwmenu -o -- -theme ~/.config/rofi/widgets/bitwarden.rasi
 
-bindsym $mod+Ctrl+l exec i3exit lock
+bindsym $mod+Ctrl+l exec loginctl lock-session
+bindsym $mod+$alt+l exec rofi -modi power-menu:rofi-power-menu -show power-menu -theme ~/.config/rofi/widgets/powermenu.rasi
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -211,13 +212,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
-exec_always xrandr --output eDP1 --mode 1920x1080
-exec_always xrandr --output eDP1 --primary
-exec_always feh --bg-fill ~/Pictures/Clearday.jpg
-
 ##########################*
 
 # focus_follows_mouse no
@@ -250,7 +244,7 @@ mode "$mode_system" {
 }
 
 # # Autostart applications
-# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 # #exec --no-startup-id manjaro-hello
 # exec --no-startup-id nm-applet
@@ -261,9 +255,19 @@ mode "$mode_system" {
 # # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # # exec --no-startup-id start_conky_green
-exec_always --no-startup-id xautolock -time 30 -locker blurlock
+# exec_always --no-startup-id xautolock -time 30 -locker blurlock
 # exec_always --no-startup-id ff-theme-util
 # exec_always --no-startup-id fix_xcursor
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xset s 600
+exec --no-startup-id xss-lock -- i3exit lock
+
+exec_always --no-startup-id xrandr --output eDP1 --mode 1920x1080
+exec_always --no-startup-id xrandr --output eDP1 --primary
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Clearday.jpg
+
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
