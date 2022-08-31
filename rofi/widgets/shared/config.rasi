@@ -139,53 +139,51 @@ element-text, element-icon {
 
 element {
   background-color:    @background;
+  text-color:          @foreground;
   border:              @border-width;
   border-color:        transparent;
   padding:             15px;
 }
 
-// element normal {
-//   background-color:    @background;
-// }
+element normal {
+  background-color:    @background;
+  text-color:          @foreground;
+}
 element normal.urgent {
-  // background-color:    @background;
   text-color:          @red;
 }
 element normal.active {
-  // background-color:    @background;
   border-color:        @green;
 }
 element selected {
   background-color:    @surface;
-  // border-color:        @accent;
-  // text-color:          @accent;
+  text-color:          @foreground;
 }
-// element selected.normal {
-//   background-color:    @surface;
-//   // border-color:        @accent;
-//   // text-color:          @accent;
-// }
-// element selected.urgent {
-//   background-color:    @background;
-//   border-color:        @red;
-//   text-color:          @red;
-// }
-// element selected.active {
-//   background-color:    @background;
-//   text-color:          @accent;
-// }
-// element alternate.normal {
-//   background-color:    @background;
-// }
-// element alternate.normal {
-//   background-color:    @background;
-// }
-// element alternate.urgent {
-//   background-color:    @background;
-// }
-// element alternate.active {
-//   background-color:    @background;
-// }
+element selected.normal {
+  background-color:    @surface;
+  text-color:          @foreground;
+}
+element selected.urgent {
+  background-color:    @background;
+  border-color:        @red;
+  text-color:          @red;
+}
+element selected.active {
+  background-color:    @background;
+  text-color:          @accent;
+}
+element alternate{
+  background-color:    @background;
+}
+element alternate.normal {
+  background-color:    @background;
+}
+element alternate.urgent {
+  background-color:    @background;
+}
+element alternate.active {
+  background-color:    @background;
+}
 
 button {
   horizontal-align:    0.5;
@@ -214,13 +212,10 @@ scrollbar {
   padding:             0;
 }
 
-error-message {
-
-  text-color:          @red;
-}
-textbox {
+#message .textbox {
   // border:              @border-width;
   // border-color:        @accent;
   // padding:             1px;
+  text-color:          @red;
 }
 
