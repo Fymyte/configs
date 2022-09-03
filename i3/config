@@ -78,7 +78,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10; notify-sen
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Screen capture
-bindsym Print exec flameshot gui
+bindsym Print exec "sleep 5; flameshot screen -c"
+bindsym $mod+Shift+s exec flameshot gui
 bindsym $mod+Print exec flameshot screen -c
 bindsym $mod+Shift+Print exec flameshot full -c
 
@@ -87,8 +88,9 @@ bindsym $mod+Shift+q kill
 
 # bindsym $mod+d exec ~/.config/rofi/bin/launcher_text
 bindsym $mod+d exec ~/.config/rofi/bin/launcher.sh
-bindsym $mod+b exec rofi -modi emoji -show emoji -theme ~/.config/rofi/widgets/emoji.rasi
-bindsym $mod+Ctrl+b exec bwmenu -o -- -theme ~/.config/rofi/widgets/bitwarden.rasi
+bindsym $mod+semicolon exec rofi -modi emoji -show emoji -theme ~/.config/rofi/widgets/emoji.rasi
+bindsym $mod+Ctrl+b exec "bwmenu -p mainbox{children:[inputbar]\;} -p window{height:inherit\;} -- --normal-window -theme ~/.config/rofi/widgets/bitwarden.rasi"
+bindsym $mod+Ctrl+f exec "bwmenu -- -theme ~/.config/rofi/widgets/bitwarden.rasi"
 
 bindsym $mod+Ctrl+l exec loginctl lock-session
 bindsym $mod+$alt+l exec rofi -modi power-menu:rofi-power-menu -show power-menu -theme ~/.config/rofi/widgets/powermenu.rasi
@@ -97,6 +99,8 @@ bindsym $mod+$alt+l exec rofi -modi power-menu:rofi-power-menu -show power-menu 
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+for_window [class="Rofi"] floating enable
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -261,12 +265,6 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xset s 600
-exec --no-startup-id xss-lock -- i3exit lock
-
-exec_always --no-startup-id xrandr --output eDP1 --mode 1920x1080
-exec_always --no-startup-id xrandr --output eDP1 --primary
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Clearday.jpg
 
 
 
