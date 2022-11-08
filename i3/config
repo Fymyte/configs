@@ -92,7 +92,7 @@ bindsym $mod+semicolon exec rofi -modi emoji -show emoji -theme ~/.config/rofi/w
 bindsym $mod+Ctrl+b exec "bwmenu -p mainbox{children:[inputbar]\;} -p window{height:inherit\;} -- --normal-window -theme ~/.config/rofi/widgets/bitwarden.rasi"
 bindsym $mod+Ctrl+f exec "bwmenu -- -theme ~/.config/rofi/widgets/bitwarden.rasi"
 
-bindsym $mod+Ctrl+l exec loginctl lock-session
+bindsym $mod+Ctrl+l exec i3lock --image /usr/share/backgrounds/black_wall.png
 bindsym $mod+$alt+l exec rofi -modi power-menu:rofi-power-menu -show power-menu -theme ~/.config/rofi/widgets/powermenu.rasi
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
