@@ -4,27 +4,28 @@
  */
 
 configuration {
-  icon-theme:          "Oranchelo";
+  // icon-theme:          "Oranchelo";
   fixed-num-lines:     true;
   show-icons:          true;
   click-to-exit:       true;
   sidebar-mode:        false;
   scroll-method:       0;
-  drun-display-format: "{name}";
-  run-display-format:  "{name}";
-  drun-url-launcher:   "xdg-open {cmd}";
+  fake-background:     "screenshot";
+  // drun-display-format: "{name}";
+  // run-display-format:  "{name}";
+  // drun-url-launcher:   "xdg-open {cmd}";
 
   // Select entry with a single mouse click
-  hover-select:        true;
+  // hover-select:        true;
   me-select-entry:     "";
   me-accept-entry:     "MousePrimary";
 
   // Display options
   display-drun:        "  Apps ";
   display-run:         "  Run ";
-  display-window:      " 﩯 Window ";
-  display-network:     "  Network ";
-  display-emoji:       " 😀 Emoji ";
+  // display-window:      " 﩯 Window ";
+  // display-network:     "  Network ";
+  // display-emoji:       " 😀 Emoji ";
   display-keys:        "  Keys ";
   modi:                [run,drun];
 }
@@ -104,7 +105,7 @@ entry {
   font:                @font-emphasis;
   background-color:    @overlay;
   vertical-align:      0.5;
-  cursor:              text;
+  // cursor:              text;
   placeholder:         "";
 }
 
